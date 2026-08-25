@@ -3,6 +3,15 @@
 **Um agente de IA controla o nível de um gerador de vapor. Uma camada
 determinística garante que ele nunca chegue perto de desligar a planta.**
 
+> **In English —** An RL/MPC agent controls steam-generator level on a
+> non-minimum-phase plant, while a deterministic runtime-assurance layer
+> (safety envelope + short-horizon prediction + Simplex reversion) keeps it
+> away from the protection setpoints. The protection layer itself (RPS/ESFAS,
+> 2oo3 voting, latching) contains no AI and is validated by test, in the shape
+> of a safety-instrumented-function argument. The question is not whether AI
+> can be SIL-rated — it is *where AI may sit* so the plant gets better without
+> the safety case getting worse.
+
 Projeto de conceito na fronteira entre controle avançado, aprendizado de
 máquina e segurança funcional (IEC 61508 / IEC 61511 / ISO-IEC TR 5469).
 
