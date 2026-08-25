@@ -26,7 +26,11 @@ import numpy as np
 class PlantParams:
     K_m: float = 5.0        # %/s por fracao de desbalanco de vazao
     tau_sw: float = 12.0    # s, constante de tempo do efeito de vazio
-    K_sw: float = 30.0      # % por fracao (intensidade do shrink/swell)
+    K_sw: float = 90.0      # % por fracao (intensidade do shrink/swell)
+    # NOTA DE PROJETO: a planta so e de FASE NAO-MINIMA se K_sw > K_m * tau_sw.
+    # Aqui 90 > 60 -> zero em s = +1/6 s^-1 (ver zero_nao_minimo()).
+    # Com K_sw < K_m*tau_sw o modelo vira uma planta banal e o projeto
+    # inteiro perde o sentido. E o primeiro item da revisao do modelo.
     tau_valve: float = 3.0  # s, atuador de agua de alimentacao
     rate_valve: float = 0.08  # fracao/s, limite de taxa da valvula
     tau_steam: float = 6.0  # s, resposta da vazao de vapor a demanda
@@ -34,6 +38,19 @@ class PlantParams:
     u_max: float = 1.2
     NR0: float = 50.0       # % nivel inicial
     q0: float = 1.0         # fracao de vazao nominal inicial
+
+
+def zero_nao_minimo(p: "PlantParams") -> float:
+    """
+    Zero da transferencia nivel/vazao-de-agua:
+        L(s)/q_fw(s) = K_m/s - K_sw/(tau_sw s + 1)
+        zero em s = -K_m / (K_m*tau_sw - K_sw)
+    Positivo => fase nao-minima (resposta inversa): abrir a valvula faz o
+    nivel CAIR antes de subir. E o que quebra sintonia por tentativa e erro,
+    o que quebra RL de horizonte curto, e o que torna o problema interessante.
+    """
+    den = p.K_m * p.tau_sw - p.K_sw
+    return float("inf") if den == 0 else -p.K_m / den
 
 
 class SteamGenerator:
