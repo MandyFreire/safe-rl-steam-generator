@@ -1,0 +1,16 @@
+# nucleo (o esqueleto de hoje roda so com estes)
+numpy>=1.24
+matplotlib>=3.7
+pytest>=7.4
+
+# semana 3 em diante (RL)
+# gymnasium>=0.29
+# stable-baselines3>=2.2
+# torch>=2.1
+
+# semana 2 (MPC, para comparacao)
+# do-mpc>=4.6
+# casadi>=3.6
+
+# semana 5 (integracao industrial, opcional)
+# asyncua>=1.0        # servidor/cliente OPC UA
