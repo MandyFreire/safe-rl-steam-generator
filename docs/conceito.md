@@ -10,12 +10,11 @@ uma camada determinística garante que ele nunca chegue perto de desligar a plan
 ## 1. Por que este projeto, e por que ela
 
 A vitrine de dados da Fase 1 do plano de carreira pedia "1–2 mini-projetos".
-Este não é um mini-projeto genérico de manutenção preditiva — é o único que
-só a Amanda poderia ter feito.
+Este não é um mini-projeto genérico de manutenção preditiva — é o único e que eu escolhi fazer.
 
-| Ativo dela | Como aparece no projeto |
+| Ativo | Como aparece no projeto |
 |---|---|
-| Nuclear crítico, SPP/SCS | ESFAS/RPS reais: LO-LO → trip + AFW; HI-HI → trip de turbina + isolamento |
+| Nuclear crítico | ESFAS/RPS reais: LO-LO → trip + AFW; HI-HI → trip de turbina + isolamento |
 | Segurança funcional certificada | camadas independentes, votação 2oo3, latch, tempo de resposta, testes como validação de SIF |
 | Controle e sintonia | planta de fase não-mínima (shrink & swell), controle a três elementos, feedforward |
 | Transição para dados/produto | ML, métricas, dashboard, decisão de arquitetura documentada |
