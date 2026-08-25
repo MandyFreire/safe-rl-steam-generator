@@ -119,20 +119,8 @@ publicável ao fim da semana 3.
 | Afirmar demais sobre normas | falar de *arquitetura compatível com*, nunca de conformidade; citar ISO/IEC TR 5469 como referência, não como selo |
 | Perfeccionismo no modelo da planta | modelo de ordem reduzida é declarado como tal no README; fidelidade não é o entregável |
 
-## 8. Mapa de conteúdo — encaixa no calendário já existente
 
-| Data | Slot do plano | Post |
-|---|---|---|
-| 07/10 | Dados | **"Meu controlador de IA era idêntico ao PID em todos os testes. Aí veio a rejeição de carga."** Cena: as duas linhas sobrepostas no gráfico, IAE igual até a terceira casa. Lição: desempenho médio no conjunto de teste não é argumento de segurança. POV: quem valida modelo por métrica agregada está validando a parte fácil. Pergunta: como vocês testam o comportamento fora da distribuição? |
-| 21/10 | Nuclear | **"Um transmissor de nível subiu 70 % e a planta nem percebeu."** Cena: as três leituras divergindo. Lição: 2oo3 e mediana. POV: a votação te protege do trip espúrio, não da agregação errada no controle — no caso da média, o nível real chegou a 1,8 % do setpoint de trip. Pergunta: quantos sistemas por aí fazem média de sensores redundantes? |
-| 04/11 | Gestão ★ | **"Um trip é um sucesso da segurança e um fracasso do controle."** Lição: a diferença entre agir antes e agir depois do limite. POV: o mesmo raciocínio vale para gestão — quando o plano de contingência dispara, o problema não foi resolvido, foi contido. Pergunta: quais são os "trips" do seu processo? |
-| 18/11 | Produto ★ | **"Onde a IA pode ficar."** Lição: alocação de funções por camada; o que o produto pode reivindicar e o que não pode. POV: a decisão de arquitetura de IA é, antes de tudo, uma decisão de produto sobre risco. Pergunta: quem na sua empresa decide onde o modelo pode ficar? |
-
-Extra para reciclagem: o erro do zero no semiplano errado ("passei duas horas
-convencida de que a planta era difícil — ela não era, e o teste que escrevi
-depois é o que me impede de repetir isso").
-
-## 9. Referências
+## 8. Referências
 
 - IEC 61508 / IEC 61511 — segurança funcional, SIL, independência de camadas.
 - ISO/IEC TR 5469:2024 — *Artificial intelligence — Functional safety and AI systems*.
