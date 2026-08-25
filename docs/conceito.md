@@ -95,6 +95,7 @@ exatamente onde ninguém testou. Com a contenção, ela entrega mais desempenho
 | 3 | RL (SAC) treinado com o governor no laço | política supera o PID em ≥ 2 cenários; zero trips em 100 episódios de avaliação |
 | 4 | Robustez: falhas de sensor, atuador travado, deriva de modelo | tabela de degradação graciosa; nº de vetos como indicador de saúde da política |
 | 5 | Dashboard + OPC UA (opcional) | página única com trajetórias, métricas e eventos do governor |
+| 5b |HIL com microcontrolador (decidido em 25/08, para depois) — ESP32 ou Pico W roda o controlador em C, a planta segue em Python no PC, via Modbus TCP . O ganho não é realismo físico e sim temporização: tempo de ciclo, jitter e perda de pacote passam a existir, e o governor precisa decidir com dados atrasados.	| malha fechada por rede, com o atraso medido e reportado nas métricas|
 | 6 | Caso de segurança + README em inglês | documento que diz o que é reivindicado, o que **não** é, e por quê |
 
 **Regra de corte:** semanas 5 e 6 são as primeiras a encolher. O projeto já é
